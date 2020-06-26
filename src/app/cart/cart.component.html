@@ -1,0 +1,46 @@
+<div class="container">
+  <h3 class="m-5">Cart</h3>
+
+  <div class="cart-item shadow p-3 mb-5 rounded" *ngFor="let item of items">
+    <span class="m-3">{{ item.destination }} </span>
+    <span class="m-3"> {{ item.price | currency }}</span>
+  </div>
+  <div class="bg-success shadow p-3 mb-5 rounded text-light">{{totalCost}}
+
+  </div>
+
+  <form
+    class="shadow p-3 mb-5 rounded"
+    [formGroup]="checkoutForm"
+    (ngSubmit)="onSubmit(checkoutForm.value)"
+  >
+    <div class="m-3">
+      <label class="mb-2 ml-2 mr-5" for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name" />
+    </div>
+
+    <div class="m-3">
+      <label class="mb-2 ml-2 mr-5 mt-3" for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address" />
+    </div>
+    <div class="m-3">
+      <label class="mb-2 ml-2 mr-5 mt-3" for="address">
+        Telefon
+      </label>
+      <input id="Telefon" type="text" formControltel="telefon" />
+    </div>
+    <div class="m-3">
+      <label class="mb-2 ml-2 mr-5 mt-3" for="address">
+        E-Mail
+      </label>
+      <input id="Mail" type="text" formControlMail="mail" />
+    </div>
+    <div class="m-3">
+      <button class="button btn btn-success" type="submit">Purchase</button>
+    </div>
+  </form>
+</div>

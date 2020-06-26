@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="m-5">Our Offers</h2>
+
+  <div
+    class="m-5 border border-dark rounded p-3 shadow p-3 mb-5"
+    *ngFor="let travel of travel"
+  >
+    <h3>
+      {{ travel.destination }}
+    </h3>
+    <p>
+      <b>Discription:</b><br />
+      {{ travel.discription }}
+    </p>
+    <hr />
+    <img src="{{ travel.img }}" style="height: 300px;" />
+    <p><b>Start:</b> {{ travel.start }}</p>
+    <p><b>Duration:</b> {{ travel.duration }}</p>
+    <p>
+      <b>Price:</b
+      ><span class="text-success font-weight-bold"> {{ travel.price }} €</span>
+    </p>
+    <button class="btn btn-success m-3" (click)="addToCart(travel)">
+      add To Cart
+    </button>
+  </div>
+</div>
